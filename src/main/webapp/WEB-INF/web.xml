@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+                      http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd
+                      http://xmlns.jcp.org/xml/ns/javaee "
+         version="4.0">
+
+    <display-name>Telecom</display-name>
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+    <servlet>
+        <servlet-name>main</servlet-name>
+        <jsp-file>/index.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>main</servlet-name>
+        <url-pattern>/main</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>admin</servlet-name>
+        <jsp-file>/WEB-INF/jsp/admin_page.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>admin</servlet-name>
+        <url-pattern>/admin</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>auth</servlet-name>
+        <jsp-file>/WEB-INF/jsp/auth_user.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>auth</servlet-name>
+        <url-pattern>/auth_user</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>users</servlet-name>
+        <jsp-file>/WEB-INF/jsp/show_users.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>users</servlet-name>
+        <url-pattern>/users</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>edit</servlet-name>
+        <jsp-file>/WEB-INF/jsp/edit_profile.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>edit</servlet-name>
+        <url-pattern>/edit_profile</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>tariff</servlet-name>
+        <jsp-file>/WEB-INF/jsp/tarif_admin.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>tariff</servlet-name>
+        <url-pattern>/tariff_admin</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>statistic</servlet-name>
+        <jsp-file>/WEB-INF/jsp/statistic_admin.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>statistic</servlet-name>
+        <url-pattern>/statistic</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>user_tariff</servlet-name>
+        <jsp-file>/WEB-INF/jsp/show_users_tariffs.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>user_tariff</servlet-name>
+        <url-pattern>/user_tariff</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>error</servlet-name>
+        <jsp-file>/page/error.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>error</servlet-name>
+        <url-pattern>/error</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>registration</servlet-name>
+        <jsp-file>/page/registr.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>registration</servlet-name>
+        <url-pattern>/registration</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>tariffs_index</servlet-name>
+        <jsp-file>/page/tarif.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>tariffs_index</servlet-name>
+        <url-pattern>/tariffs_index</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>customtag</servlet-name>
+        <jsp-file>/page/customtag.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>customtag</servlet-name>
+        <url-pattern>/customtag</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Controller</servlet-name>
+        <servlet-class>by.epam.web.unit6.controller.Controller</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Controller</servlet-name>
+        <url-pattern>/controller</url-pattern>
+    </servlet-mapping>
+
+    <filter>
+        <filter-name>AuthenticationFilter</filter-name>
+        <filter-class>by.epam.web.unit6.filter.AuthenticationFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AuthenticationFilter</filter-name>
+        <url-pattern>/auth_user</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>EditProfileFilter</filter-name>
+        <filter-class>by.epam.web.unit6.filter.EditProfileFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>EditProfileFilter</filter-name>
+        <url-pattern>/edit_profile</url-pattern>
+    </filter-mapping>
+    <filter>
+        <filter-name>AdminPageFilter</filter-name>
+        <filter-class>by.epam.web.unit6.filter.AdminPageFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AdminPageFilter</filter-name>
+        <url-pattern>/admin_page</url-pattern>
+    </filter-mapping>
+    <filter>
+        <filter-name>ShowUserFilter</filter-name>
+        <filter-class>by.epam.web.unit6.filter.ShowUserFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>ShowUserFilter</filter-name>
+        <url-pattern>/show_users</url-pattern>
+    </filter-mapping>
+    <filter>
+        <filter-name>ShowTariffAdminFilter</filter-name>
+        <filter-class>by.epam.web.unit6.filter.ShowTariffAdminFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>ShowTariffAdminFilter</filter-name>
+        <url-pattern>/show_users_tariffs</url-pattern>
+    </filter-mapping>
+    <filter>
+        <filter-name>CharsetFilter</filter-name>
+        <filter-class>by.epam.web.unit6.filter.CharsetFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>CharsetFilter</filter-name>
+        <url-pattern>/controller</url-pattern>
+    </filter-mapping>
+    <filter>
+        <filter-name>PaginationFilter</filter-name>
+        <filter-class>by.epam.web.unit6.filter.PaginationFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>PaginationFilter</filter-name>
+        <url-pattern>/customtag</url-pattern>
+    </filter-mapping>
+
+
+</web-app>

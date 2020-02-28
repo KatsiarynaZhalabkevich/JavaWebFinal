@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE taglib
+        PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN"
+        "http://java.sun.com/j2ee/dtd/web-jsptaglibrary_1_2.dtd">
+
+<taglib>
+
+    <tlib-version>1.0</tlib-version>
+    <jsp-version>1.2</jsp-version>
+    <short-name>mytag</short-name>
+    <uri>/WEB-INF/tags.tld</uri>
+
+    <tag>
+        <name>date</name>
+        <tag-class>by.epam.web.unit6.tag.TimeJSPTag</tag-class>
+    </tag>
+    <tag>
+        <name>tariff</name>
+        <tag-class>by.epam.web.unit6.tag.ListJSPTag</tag-class>
+        <body-content>empty</body-content>
+        <attribute>
+            <name>num</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>list</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+
+</taglib>
